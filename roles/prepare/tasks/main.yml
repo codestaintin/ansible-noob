@@ -1,0 +1,13 @@
+---
+- name: "update brew packages"
+  become: true
+  homebrew:
+    update_cache: yes
+#  become_method: sudo
+#  apt:
+#    update_cache: yes
+
+- name: "remove dependencies that are no longer required"
+  become: true
+  apt:
+    autoremove: yes
